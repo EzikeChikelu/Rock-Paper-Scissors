@@ -1,0 +1,18 @@
+button{
+  width: 100px;
+  height: 50px;
+  margin-left: 40px;
+  background-color: aqua;
+  border-radius: 8px;
+}
+p{
+  text-align: center;
+  padding-bottom: 50px;
+  margin-top: 50px;
+}
+.butt1{
+  margin-left: 500px;
+}
+body{
+  background-color: gray;
+}
