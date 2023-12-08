@@ -1,5 +1,9 @@
-
 let result='';
+const score = {
+  wins: 0,
+  losses: 0,
+  ties: 0
+}
 
 function pickComputerMove() {
   let computerMove ='';
@@ -23,24 +27,24 @@ function playGame(playerMove){
     
       if (playerMove === 'scissors'){
           if(computerMove === 'rock'){
-            result = 'You Lose'
+            result = 'You Lose.'
           }
           else if( computerMove === 'paper'){
-            result = 'You Win'
+            result = 'You Win.'
           }
           else if(computerMove === 'scissors'){
-            result = 'You Tie'
+            result = 'You Tie.'
           }
       }
       else if (playerMove === 'paper'){
         if(computerMove === 'rock'){
-            result = 'You win';
+            result = 'You Win.';
           }
           else if(computerMove === 'paper'){
-            result = 'You Tie';
+            result = 'You Tie.';
           }
           else if(computerMove === 'scissors'){
-            result = 'You Lose';
+            result = 'You Lose.';
         }
       }
       else if(playerMove === 'rock') {
@@ -48,12 +52,29 @@ function playGame(playerMove){
           result = 'You Tie.';
         }
         else if(computerMove === 'paper'){
-          result = 'You Lose';
+          result = 'You Lose.';
         }
         else if(computerMove === 'scissors'){
-          result = 'You Win';
+          result = 'You Win.';
         }
       }
 
-      alert(`You picked ${playerMove} computer picked ${computerMove}. ${result}`);
+      if(result === 'You Win.'){
+        score.wins += 1
+      }
+      else if(result === 'You Lose.'){
+        score.losses += 1
+      }
+      else if(result === 'You Tie.'){
+        score.ties += 1
+      }
+
+      alert(`You picked ${playerMove} computer picked ${computerMove}. ${result}
+Wins: ${score.wins}, Losses ${score.losses}, Ties ${score.ties}`);
+  }
+
+  function reset(){
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
   }
