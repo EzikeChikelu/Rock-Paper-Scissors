@@ -15,7 +15,7 @@ if(score === null){
     ties: 0
   }
 }
-/*
+
 AS THIS
 //!score is same as checking if null
 if (!score){
