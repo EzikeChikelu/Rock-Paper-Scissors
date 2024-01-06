@@ -6,6 +6,8 @@ losses:0,
 ties:0
 }
 
+updateScoreElement();
+
 /* 
 THIS IS SAME
 if(score === null){
@@ -96,15 +98,27 @@ function playGame(playerMove){
       //To save to local storage
       localStorage.setItem('score', JSON.stringify(score));
 
-      alert(`You picked ${playerMove} computer picked ${computerMove}. ${result}
+      updateScoreElement();
+    
+     laResult();
+      
+     document.querySelector('.js-moves').innerHTML = `You ${playerMove} - ${computerMove} Computer`;
+  }
 
-      Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}.`);
+  function updateScoreElement(){
+    document.querySelector('.js-score')
+        .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+  }
+  
+  function laResult() {
+    document.querySelector('.js-result')
+      .innerHTML = result;
   }
 
   function reset(){
     score.wins = 0,
     score.losses = 0,
     score.ties = 0
-
     localStorage.removeItem('score');
+    updateScoreElement();
   }

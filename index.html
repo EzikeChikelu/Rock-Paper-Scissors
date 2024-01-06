@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="index.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
@@ -15,8 +14,14 @@
   <button onclick="playGame('paper');">Paper</button>
   <button onclick="playGame('scissors');">Scissors</button>
   </p>
+
+  <p class="js-result"></p>
+  <p class="js-moves"></p>
+  <p class="js-score"></p>
+  
   <p id="para">
   <button class="butt2" onclick="reset()">Reset Score</button>
+  <script src="rock-dom.js"></script>
   </p>
 </body>
 </html>
