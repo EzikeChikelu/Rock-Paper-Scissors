@@ -97,12 +97,14 @@ function playGame(playerMove){
       localStorage.setItem('score', JSON.stringify(score));
 
       alert(`You picked ${playerMove} computer picked ${computerMove}. ${result}
-Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}.`);
+
+      Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}.`);
   }
 
   function reset(){
-    score.wins = 0;
-    score.losses = 0;
-    score.ties = 0;
+    score.wins = 0,
+    score.losses = 0,
+    score.ties = 0
+
     localStorage.removeItem('score');
   }
